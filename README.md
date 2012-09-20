@@ -11,5 +11,7 @@ To remove as many duplicates as possible, messages are parsed two different ways
 ## Known Issues
 Currently, this code is suited to my particular situation: a named "Archive" folder, and a command line app. Offering options to support "dry runs", different folder names, and potentially even an Outlook add-in would be great in future versions.
 
+If you run this with the default Outlook settings, you will receive a warning dialog for every message that Outlook attempts to process. When there are a substantial amount, this can become quite a nuisance. To get around this, you can start Outlook as an administrator, and go to Options on the File menu. Click the Trust Center tab, and then Trust Center Settings. On the programmatic access tab, select "Never warn me about suspicious activity". *PLEASE* make sure to turn this back on after you're done running this program.
+
 ## Warranties
 Please keep in mind that there are no warranties with the code. It worked well for me; your mileage may vary.
