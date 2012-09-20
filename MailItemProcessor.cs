@@ -7,18 +7,13 @@ namespace com.mattberther.deduper
     {
         private readonly List<string> messageKeys = new List<string>();
         private readonly List<IKeyGenerator> keyGenerators = new List<IKeyGenerator>();
-        private readonly bool dryRun = true;
-
-        public MailItemProcessor(bool dryRun = false)
-        {
-            this.dryRun = dryRun;
-        }
-
+        
         public void RegisterKeyGenerator(IKeyGenerator keyGenerator)
         {
             keyGenerators.Add(keyGenerator);
         }
 
+        public bool DryRun { get; set; }
         public int ItemsDeleted { get; private set; }
 
         public void ProcessMailItem(MailItem item)
@@ -40,7 +35,7 @@ namespace com.mattberther.deduper
 
             if (markedForDeletion)
             {
-                if (!dryRun) { item.Delete(); }
+                if (!DryRun) { item.Delete(); }
                 ItemsDeleted++;
             }
         }

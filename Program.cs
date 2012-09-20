@@ -7,7 +7,7 @@ namespace com.mattberther.deduper
     {
         static void Main(string[] args)
         {
-            var mailItemProcessor = new MailItemProcessor(true);
+            var mailItemProcessor = new MailItemProcessor {DryRun = true};
             mailItemProcessor.RegisterKeyGenerator(new MessageIdKeyGenerator());
             mailItemProcessor.RegisterKeyGenerator(new MessageAttributeKeyGenerator());
 
